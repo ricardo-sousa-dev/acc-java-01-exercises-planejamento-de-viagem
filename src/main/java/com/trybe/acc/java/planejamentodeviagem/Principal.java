@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class Principal {
 
-  /**
-   * Método principal com o menu do sistema.
-   * 
-   */
+  /** Método principal com o menu do sistema. */
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int op;
@@ -29,13 +26,13 @@ public class Principal {
         String origem = scanner.nextLine();
         System.out.print("Entre com o nome da cidade destino: ");
         String destino = scanner.nextLine();
-        System.out
-            .print("Entre com a data e o horário da partida (formato: dd/mm/aaaa hh:mm:ss): ");
+        System.out.print(
+            "Entre com a data e o horário da partida (formato: dd/mm/aaaa hh:mm:ss): ");
         String partida = scanner.nextLine();
         System.out.print("Entre com a distância em km entre a cidade de origem e a de destino: ");
         Double distanciaKm = scanner.nextDouble();
 
-        Viagem viagem = new Viagem(partida, origem, destino, distanciaKm);
+        Viagem viagem = new Viagem(origem, destino, partida, distanciaKm);
 
         System.out.println(
             "\n\n---------------------------- Resumo da Viagem ----------------------------");
@@ -54,7 +51,5 @@ public class Principal {
 
     System.out.println("Sistema Encerrado!");
     scanner.close();
-
   }
-
 }
