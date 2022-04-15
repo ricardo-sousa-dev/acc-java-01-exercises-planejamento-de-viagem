@@ -23,16 +23,20 @@ public class Principal {
 
       if (op == 1) {
         System.out.print("Entre com o nome da cidade origem: ");
-        String origem = scanner.nextLine();
+        // String origem = scanner.nextLine();
+        String origem = "Recife";
         System.out.print("Entre com o nome da cidade destino: ");
-        String destino = scanner.nextLine();
+        // String destino = scanner.nextLine();
+        String destino = "Tokyo";
         System.out.print(
             "Entre com a data e o horário da partida (formato: dd/mm/aaaa hh:mm:ss): ");
-        String partida = scanner.nextLine();
+        // String partida = scanner.nextLine();
+        String partida = "05/05/2022 13:00:00";
         System.out.print("Entre com a distância em km entre a cidade de origem e a de destino: ");
-        Double distanciaKm = scanner.nextDouble();
+        // Integer distanciaKm = scanner.nextInt();
+        Integer distanciaKm = 17000;
 
-        Viagem viagem = new Viagem(origem, destino, partida, distanciaKm);
+        Viagem viagem = new Viagem(partida, origem, destino, distanciaKm);
 
         System.out.println(
             "\n\n---------------------------- Resumo da Viagem ----------------------------");

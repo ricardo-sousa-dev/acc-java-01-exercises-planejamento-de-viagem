@@ -15,11 +15,11 @@ public class Viagem {
    * @param partida
    * @param distanciaKm
    */
-  public Viagem(String origem, String destino, String partida, Double distanciaKm) {
-    this.embarque = "";
-    this.origem = "";
-    this.destino = "";
-    this.distanciaKm = 0.0;
+  public Viagem(String partida, String origem, String destino, int distanciaKm) {
+    this.embarque = partida;
+    this.origem = origem;
+    this.destino = destino;
+    this.distanciaKm = distanciaKm;
     this.voo = new Voo();
   }
 
@@ -30,15 +30,44 @@ public class Viagem {
     return tempoViagem.retonarDesembarqueHorarioLocalDestino();
   }
 
+  /** Método para retorno do horário de Desembarque no Origem. */
+  public String retonarDesembarqueHorarioLocalOrigem() {
+    Tempo tempoViagem =
+        new Tempo(this.embarque, this.origem, this.destino, this.retornarDuracaoVoo());
+    return tempoViagem.retonarDesembarqueHorarioLocalOrigem();
+  }
+
   // aqui consideramos que um aviao percorre em media 700 km a cada hora
   public int retornarDuracaoVoo() {
     return this.voo.retornarTempoVoo(this.distanciaKm);
   }
 
   /** Método para retorno da informaçao da viagem. */
-  public Tempo retornarInformacaoViagem() {
-    Tempo tempoViagem =
-        new Tempo(this.embarque, this.origem, this.destino, this.retornarDuracaoVoo());
-    return tempoViagem;
+  public String retornarInformacaoViagem() {
+    String resumo =
+        "Partida: "
+            + this.embarque
+            + "\n"
+            + "Origem: "
+            + this.origem
+            + "\n"
+            + "Chegada: "
+            + retonarDesembarqueHorarioLocalDestino()
+            + "\n"
+            + "Destino: "
+            + this.destino
+            + "\n"
+            + "Atenção: o desembarque em "
+            + this.destino
+            + " será: "
+            + retonarDesembarqueHorarioLocalDestino()
+            + " no horário de "
+            + this.destino
+            + " e "
+            + retonarDesembarqueHorarioLocalOrigem()
+            + " no horário de "
+            + this.origem
+            + "\n";
+    return resumo;
   }
 }
