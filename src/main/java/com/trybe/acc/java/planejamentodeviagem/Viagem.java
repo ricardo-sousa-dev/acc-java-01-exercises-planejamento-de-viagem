@@ -7,14 +7,7 @@ public class Viagem {
   private double distanciaKm;
   private Voo voo;
 
-  /**
-   * Método construtor da classe.
-   *
-   * @param origem
-   * @param destino
-   * @param partida
-   * @param distanciaKm
-   */
+  /** Método construtor da classe. */
   public Viagem(String partida, String origem, String destino, int distanciaKm) {
     this.embarque = partida;
     this.origem = origem;
