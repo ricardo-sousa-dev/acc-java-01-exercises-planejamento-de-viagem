@@ -36,7 +36,7 @@ public class Tempo {
     int indiceFusoHorarioOrigem = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      if (fusosHorarios[i].equals(this.origem)) {
+      if (fusosHorarios[i].contains(this.origem)) {
         indiceFusoHorarioOrigem = i;
       }
     }
@@ -49,7 +49,7 @@ public class Tempo {
     int indiceFusoHorarioDestino = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      if (fusosHorarios[i].equals(this.destino)) {
+      if (fusosHorarios[i].contains(this.destino)) {
         indiceFusoHorarioDestino = i;
       }
     }
@@ -72,7 +72,7 @@ public class Tempo {
     int indiceFusoHorarioOrigem = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      if (fusosHorarios[i].equals(this.origem)) {
+      if (fusosHorarios[i].contains(this.origem)) {
         indiceFusoHorarioOrigem = i;
       }
     }
